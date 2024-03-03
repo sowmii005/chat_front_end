@@ -1,0 +1,31 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card style="width: 300px; height: 500px; text-align: center;" color="warning">
+    <p-toast></p-toast>
+    <ion-img
+    src="assets/images/chat.jpg" class="rounded-image" style="height: 200px; width: 200px;margin: auto;"
+  ></ion-img>
+  <form [formGroup]="loginform">
+  <ion-list style="width: 250px; margin: auto; align-items: center;">
+    <ion-item style="width: 100%;">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input formControlName="userName" placeholder="Enter Username"></ion-input>
+    </ion-item>
+    <ion-item style="width: 100%;">
+      <ion-icon name="lock-closed-outline"  slot="start"></ion-icon>
+      <ion-input type="password" formControlName="password"  placeholder="Password"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button class="right" (click)="onlogin()">login</ion-button>
+  </ion-list>
+  </form>
+  <br>
+  <span>Forget password ?</span>&nbsp;<a href="/forget-password" style="color: black;">Click here</a>
+  <br><br>
+  <span>New User ?</span>&nbsp;<a href="/register" style="color: black;">Register Now</a>
+  </ion-card>
+</ion-content>

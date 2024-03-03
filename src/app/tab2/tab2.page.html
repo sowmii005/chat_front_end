@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-avatar class="profile-pic" size="large">
+    <ion-icon name="person-circle" style="font-size: 6em"></ion-icon>
+  </ion-avatar>
+  <div class="align">
+    <p>Welcome {{userInformation?.userName}}</p>
+  </div>
+  <ion-grid style="padding-left: 450px;">
+    <ion-row>
+      <ion-col>
+        <p style="color: blueviolet; font-weight: bold;">Email</p>
+        <div>{{ userInformation?.email }}</div>
+      </ion-col>
+
+      <ion-col>
+        <p style="color: blueviolet; font-weight: bold;">Phone</p>
+        <div>{{ userInformation?.phone }}</div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Second Row: Address and Location -->
+    <ion-row>
+      <ion-col>
+        <p style="color: blueviolet; font-weight: bold;">Address</p>
+        <div>{{ userInformation?.Address }}</div>
+      </ion-col>
+
+      <ion-col>
+        <p style="color: blueviolet; font-weight: bold;">Location</p>
+        <div>{{ userInformation?.location }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

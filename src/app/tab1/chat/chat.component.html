@@ -1,0 +1,55 @@
+<ion-content class="color">
+  <ion-list>
+      <div class="custom-item">
+        <ion-item>
+          <ion-icon
+            name="person-circle"
+            style="
+              font-size: 2em;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          ></ion-icon>
+          <span style="font-size: 24px; margin-left: 8px">{{
+            contactobj.name
+          }}</span>&nbsp;&nbsp;
+          <ion-icon name="trash" slot="end" (click)="confirmDeleteContact()" style="font-size: 2em;color: red;"></ion-icon>
+          <ion-icon name="arrow-back-circle" slot="end" (click)="goback()" style="font-size: 2em;color: green;"></ion-icon>
+        </ion-item>
+      </div>
+      <ng-container *ngFor="let message of messages;let i=index;">
+        <ng-container *ngIf="i === 0 || (messages[i - 1]?.time | date : 'yyyy-MM-dd') !== (message.time | date : 'yyyy-MM-dd')">
+          <sub style="padding-left: 150px">{{ message.time | date : 'dd/MM/yyyy' }}</sub>
+        </ng-container>        
+      <ion-row style="margin-top: 4px;">
+        <ion-col offset="3" size="9"  class="message my-message">
+          <div *ngIf="message.id">
+            <div style="margin-top: 5px; padding-left: 30px; color: gray">
+              {{ message.message }}
+            </div>
+            </div>
+        </ion-col>
+
+      </ion-row>
+    </ng-container>
+  </ion-list>
+
+  <ion-item>
+    <ion-row>
+      <ion-col size="10">
+        <ion-input
+          [(ngModel)]="newMessage"
+          class="custom-input"
+          type="text"
+          placeholder="Type your message..."
+        ></ion-input>
+      </ion-col>
+      <ion-col size="2" style="display: flex; align-items: center">
+        <ion-button expand="full" (click)="sendMessage()"
+          >Send&nbsp;<ion-icon name="send" slot="end"></ion-icon
+        ></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-content>

@@ -1,0 +1,96 @@
+<p-toast></p-toast>
+<ion-content>
+  <div class="custom-background">
+    <div class="center-content">
+      <h3 style="text-align: center">Register</h3>
+      <br />
+      <form [formGroup]="registerForm">
+        <div class="row">
+          <ion-icon
+            name="person"
+            slot="end"
+          ></ion-icon>&nbsp;<ion-label position="floating">User Name</ion-label>
+        </div>
+
+        <ion-input
+          name="name"
+          formControlName="uname"
+          type="text"
+          class="custom-input"
+        ></ion-input>
+        <br />
+        <div class="row">
+          <ion-icon
+          name="mail"
+          slot="start"
+        ></ion-icon>&nbsp;<ion-label position="floating">Email</ion-label>
+        </div>
+        <ion-input
+          name="email"
+          formControlName="email"
+          type="text"
+          class="custom-input"
+        ></ion-input>
+        <br />
+        <div class="row">
+        <ion-icon name="lock-closed" slot="start"></ion-icon>&nbsp;<ion-label position="floating">Create Password</ion-label>
+        </div>
+
+        <ion-input
+          name="password"
+          type="password"
+          formControlName="password"
+          class="custom-input"
+        ></ion-input>
+        <br />
+        <div class="row">
+          <ion-icon name="call"></ion-icon>&nbsp;<ion-label position="floating"
+            >Phone</ion-label
+          >
+        </div>
+        <ion-input
+        name="phone"
+        type="text"
+        formControlName="phone"
+        class="custom-input"
+      ></ion-input>
+        <br />
+        <div class="row">
+          <ion-label position="floating">Select a Country</ion-label>
+        </div>
+
+        <ion-select class="custom-input customs-input" formControlName="country">
+          <ion-select-option
+            *ngFor="let option of countryList"
+            [value]="option.name"
+          >
+            {{ option.name }}
+          </ion-select-option>
+        </ion-select>
+
+        <br />
+        <div class="row">
+          &nbsp;<ion-icon
+          name="location"
+          slot="start"
+        ></ion-icon>&nbsp;<ion-label position="floating">Address</ion-label>
+        </div>
+
+        <ion-input
+          name="location"
+          type="text"
+          formControlName="address"
+          class="custom-input"
+        ></ion-input>
+        <br />
+        <ion-button
+          class="right"
+          fill="outline"
+          color="warning"
+          (click)="submit()"
+          >Create</ion-button
+        >
+      </form>
+    </div>
+  </div>
+</ion-content>
